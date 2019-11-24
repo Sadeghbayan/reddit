@@ -1,0 +1,74 @@
+@import "../../scss/utils/config";
+@import "../../scss/utils/mixin";
+.commentsWrapper {
+  margin: 1rem 0;
+  ul {
+    list-style: none;
+    padding-left: $default-space;
+    margin: $default-space;
+    position: relative;
+    li{
+      position: relative;
+      padding-left: $default-space;
+      margin: $default-space;
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: "";
+        height: 100%;
+        width: 0;
+        border-left: 1px solid $mid-gray;
+      }
+    }
+
+    .lineTop {
+      position: absolute;
+      width: 10px;
+      top: 0;
+      left: -4px;
+      height: 39px;
+      background: $light-gray;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      i {
+        display: flex;
+        @include size(8)
+      }
+    }
+    li {
+      position: relative;
+      margin: 0;
+      .commentsName {
+        color: $blue;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        span {
+          color: $dark;
+          @include size(12);
+          &:before {
+            content: "\00b7";
+            padding: 0 .5rem;
+          }
+        }
+      }
+    }
+    ul {
+      position: relative;
+      margin: 0;
+      //&:before {
+      //  position: absolute;
+      //  left: 0;
+      //  top: 0;
+      //  content: "";
+      //  height: 100%;
+      //  width: 0;
+      //  border-left: 1px solid $mid-gray;
+      //}
+    }
+  }
+}

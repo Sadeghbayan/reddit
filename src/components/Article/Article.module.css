@@ -1,8 +1,7 @@
 .articleItem {
   margin-bottom: 1rem;
   background: #fafafa;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px; }
+  border-radius: 15px; }
   .articleItem .articleItemInner {
     display: flex;
     position: relative; }

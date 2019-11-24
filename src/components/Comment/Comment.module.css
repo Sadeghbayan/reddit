@@ -1,3 +1,53 @@
-
+.commentsWrapper {
+  margin: 1rem 0; }
+  .commentsWrapper ul {
+    list-style: none;
+    padding-left: 1rem;
+    margin: 1rem;
+    position: relative; }
+    .commentsWrapper ul li {
+      position: relative;
+      padding-left: 1rem;
+      margin: 1rem; }
+      .commentsWrapper ul li:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: "";
+        height: 100%;
+        width: 0;
+        border-left: 1px solid #f0f0f0; }
+    .commentsWrapper ul .lineTop {
+      position: absolute;
+      width: 10px;
+      top: 0;
+      left: -4px;
+      height: 39px;
+      background: #fafafa;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .commentsWrapper ul .lineTop i {
+        display: flex;
+        font-size: 0.5rem; }
+    .commentsWrapper ul li {
+      position: relative;
+      margin: 0; }
+      .commentsWrapper ul li .commentsName {
+        color: #4aaaee;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; }
+        .commentsWrapper ul li .commentsName span {
+          color: #282828;
+          font-size: 0.75rem; }
+          .commentsWrapper ul li .commentsName span:before {
+            content: "\00b7";
+            padding: 0 .5rem; }
+    .commentsWrapper ul ul {
+      position: relative;
+      margin: 0; }
 
 /*# sourceMappingURL=Comment.module.css.map */
