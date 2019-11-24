@@ -30,3 +30,5 @@ yarn-error.log*
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+
+/src/scss/.sass-cache
