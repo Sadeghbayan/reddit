@@ -1,0 +1,46 @@
+@import "../../scss/utils/config";
+@import "../../scss/utils/mixin";
+
+.articleItem {
+  margin-bottom: $default-space;
+  background: $light-gray;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  .articleItemInner{
+    display: flex;
+    position: relative;
+    .articleItemImage{
+      margin: 0;
+      img{
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+      }
+    }
+    .articleItemContent{
+      margin-left: $default-space;
+      .articleItemTitle{
+        margin-top: $default-space;
+        font-weight: normal;
+        margin-bottom: .3rem;
+        @include size(25)
+      }
+    }
+  }
+  .articleItemCommentCount{
+    position: absolute;
+    bottom: 10px;
+    right: 18px;
+    align-items: center;
+    display: flex;
+    .commentCount{
+      @include size(12);
+      margin-right: $default-space * .6;
+      .commentCountNumber{
+        margin-left: $default-space * .2;
+      }
+    }
+  }
+  .articleItemComment {
+
+  }
+}

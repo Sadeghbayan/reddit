@@ -6,16 +6,16 @@ class Header extends Component {
     render() {
         return (
             <header className={styles.header}>
-                <div className="container">
+                <div className="container padding--left padding--right">
                     <div className={styles.userInformationWrapper}>
                         <div className={styles.userThumbnail}>
                             <img src={userThumbnail} alt="Amogh meshram" title="Amogh meshram"/>
                         </div>
                         <div className={styles.userInformation}>
-                            <p className={styles.fullName}>Amogh Meshram</p>
-                            <p className={styles.userDetails}>
+                            <div className={styles.fullName}>Amogh Meshram</div>
+                            <div className={styles.userDetails}>
                                 MyFeeds Account
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </div>

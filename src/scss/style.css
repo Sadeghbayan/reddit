@@ -3,7 +3,39 @@
   margin-left: auto;
   margin-right: auto; }
 
-.reddit-app--wrapper {
+.reddit--wrapper {
   background: #f9f9f9; }
+
+.reddit--wrapper-inner {
+  background: #fff;
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+
+.padding--right {
+  padding-right: 1rem; }
+
+.padding--left {
+  padding-left: 1rem; }
+
+.padding--top {
+  padding-top: 1rem; }
+
+.padding--bottom {
+  padding-bottom: 1rem; }
+
+.margin--right {
+  margin-right: 1rem; }
+
+.margin--left {
+  margin-left: 1rem; }
+
+.margin--top {
+  margin-top: 1rem; }
+
+.margin--bottom {
+  margin-bottom: 1rem; }
+
+p {
+  color: #646464; }
 
 /*# sourceMappingURL=style.css.map */
