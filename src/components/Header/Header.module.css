@@ -1,0 +1,22 @@
+.header {
+  background: #2c2c2c; }
+  .header .userInformationWrapper {
+    display: flex;
+    padding: .8rem 0;
+    align-items: center; }
+    .header .userInformationWrapper .userThumbnail img {
+      border-radius: 100px; }
+    .header .userInformationWrapper .userInformation {
+      padding-left: 1rem;
+      color: #fff;
+      text-align: left; }
+      .header .userInformationWrapper .userInformation p {
+        margin-bottom: 0; }
+      .header .userInformationWrapper .userInformation .fullName {
+        font-size: 1.25rem;
+        font-weight: bold; }
+      .header .userInformationWrapper .userInformation .userDetails {
+        font-size: 0.8125rem;
+        font-weight: lighter; }
+
+/*# sourceMappingURL=Header.module.css.map */
