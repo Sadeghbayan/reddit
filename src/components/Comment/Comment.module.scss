@@ -2,11 +2,18 @@
 @import "../../scss/utils/mixin";
 .commentsWrapper {
   margin: 1rem 0;
+  p{
+    word-break: break-word;
+  }
   ul {
     list-style: none;
-    padding-left: $default-space;
-    margin: $default-space;
     position: relative;
+    margin-left: 0;
+    padding-left: 0.4rem;
+    @include mq(md){
+      padding-left: $default-space;
+      margin: $default-space;
+    }
     li{
       position: relative;
       padding-left: $default-space;
@@ -47,12 +54,21 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        position: relative;
+        .commentsNameRight{
+          position: absolute;
+          right: 5px;
+          top: 0;
+          @include mq(md){
+            position: inherit;
+          }
+        }
         span {
           color: $dark;
           @include size(12);
           &:before {
             content: "\00b7";
-            padding: 0 .5rem;
+            padding: 0 .3rem;
           }
         }
       }

@@ -2,7 +2,9 @@
 @import "../../scss/utils/mixin";
 
 .articleItem {
-  margin-bottom: $default-space;
+  &:not(:last-child){
+    margin-bottom: $default-space * 1.3;
+  }
   background: $light-gray;
   border-radius: 15px;
   .articleItemInner{
@@ -10,18 +12,38 @@
     position: relative;
     .articleItemImage{
       margin: 0;
-      img{
+      .articleImage{
+        @include mq(md){
+          height: 140px;
+          width: 160px;
+        }
+        height: 145px;
+        display: block;
+        width: 90px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
         border-top-left-radius: 15px;
         border-bottom-left-radius: 15px;
       }
     }
     .articleItemContent{
-      margin-left: $default-space;
+      margin-left: $default-space * .4;
+      margin-right: $default-space * .4;
+      @include mq(md){
+        margin-left: $default-space;
+        margin-right: $default-space;
+      }
       .articleItemTitle{
-        margin-top: $default-space;
+        margin-top: $default-space * .2;
         font-weight: normal;
         margin-bottom: .3rem;
-        @include size(25)
+        @include size(20);
+        @include mq(md){
+          @include size(23);
+          margin-top: $default-space * .3;
+        }
+
       }
     }
   }
@@ -31,15 +53,21 @@
     right: 18px;
     align-items: center;
     display: flex;
+    @include size(12);
     .commentCount{
-      @include size(12);
-      margin-right: $default-space * .6;
+      margin-right: $default-space * .4;
       .commentCountNumber{
         margin-left: $default-space * .2;
       }
     }
   }
   .articleItemComment {
-
+    padding-bottom: $default-space;
+    max-height: 220px;
+    overflow-y: scroll;
+    @include mq(md){
+      max-height: inherit;
+      overflow-y: auto;
+    }
   }
 }

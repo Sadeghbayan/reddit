@@ -9,7 +9,15 @@ import "antd/dist/antd.css";
 import createSagaMiddleware from 'redux-saga';
 import rootReducer from './store/reducers/rootReducer';
 import rootSaga from './store/sagas/rootSaga';
+import JavascriptTimeAgo from 'javascript-time-ago'
 
+// The desired locales.
+import en from 'javascript-time-ago/locale/en'
+import ru from 'javascript-time-ago/locale/ru'
+
+// Initialize the desired locales.
+JavascriptTimeAgo.locale(en)
+JavascriptTimeAgo.locale(ru)
 
 const sagaMiddleware = createSagaMiddleware()
 const store = createStore(

@@ -2,12 +2,11 @@ import React, {Component} from 'react';
 import styles from './Comment.module.scss'
 import { Icon } from 'antd';
 import PropTypes from 'prop-types';
-import Article from "../Article/Article";
+import ReactTimeAgo from 'react-time-ago'
 
 class Comment extends Component {
     render() {
         var comment = this.props.comment
-        console.log(comment)
         return (
             <div className={styles.commentsWrapper}>
                 <ul>
@@ -19,7 +18,7 @@ class Comment extends Component {
                         <div className={styles.commentsName}>
                             <div className={styles.commentsNameLeft}>
                                 {comment.author}
-                                <span>{comment.created_utc}</span>
+                                <span> <ReactTimeAgo date={new Date(comment.created_utc * 1000)}/> </span>
                             </div>
                             <a href="javascript:;" className={styles.commentsNameRight}>
                                 <Icon type="delete" theme="filled" style={{ color: 'black' }}/>

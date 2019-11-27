@@ -1,10 +1,16 @@
 .commentsWrapper {
   margin: 1rem 0; }
+  .commentsWrapper p {
+    word-break: break-word; }
   .commentsWrapper ul {
     list-style: none;
-    padding-left: 1rem;
-    margin: 1rem;
-    position: relative; }
+    position: relative;
+    margin-left: 0;
+    padding-left: 0.4rem; }
+    @media (min-width: 768px) {
+      .commentsWrapper ul {
+        padding-left: 1rem;
+        margin: 1rem; } }
     .commentsWrapper ul li {
       position: relative;
       padding-left: 1rem;
@@ -39,13 +45,21 @@
         color: #4aaaee;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between; }
+        justify-content: space-between;
+        position: relative; }
+        .commentsWrapper ul li .commentsName .commentsNameRight {
+          position: absolute;
+          right: 5px;
+          top: 0; }
+          @media (min-width: 768px) {
+            .commentsWrapper ul li .commentsName .commentsNameRight {
+              position: inherit; } }
         .commentsWrapper ul li .commentsName span {
           color: #282828;
           font-size: 0.75rem; }
           .commentsWrapper ul li .commentsName span:before {
             content: "\00b7";
-            padding: 0 .5rem; }
+            padding: 0 .3rem; }
     .commentsWrapper ul ul {
       position: relative;
       margin: 0; }

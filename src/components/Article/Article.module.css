@@ -1,32 +1,60 @@
 .articleItem {
-  margin-bottom: 1rem;
   background: #fafafa;
   border-radius: 15px; }
+  .articleItem:not(:last-child) {
+    margin-bottom: 1.3rem; }
   .articleItem .articleItemInner {
     display: flex;
     position: relative; }
     .articleItem .articleItemInner .articleItemImage {
       margin: 0; }
-      .articleItem .articleItemInner .articleItemImage img {
+      .articleItem .articleItemInner .articleItemImage .articleImage {
+        height: 145px;
+        display: block;
+        width: 90px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
         border-top-left-radius: 15px;
         border-bottom-left-radius: 15px; }
+        @media (min-width: 768px) {
+          .articleItem .articleItemInner .articleItemImage .articleImage {
+            height: 140px;
+            width: 160px; } }
     .articleItem .articleItemInner .articleItemContent {
-      margin-left: 1rem; }
+      margin-left: 0.4rem;
+      margin-right: 0.4rem; }
+      @media (min-width: 768px) {
+        .articleItem .articleItemInner .articleItemContent {
+          margin-left: 1rem;
+          margin-right: 1rem; } }
       .articleItem .articleItemInner .articleItemContent .articleItemTitle {
-        margin-top: 1rem;
+        margin-top: 0.2rem;
         font-weight: normal;
         margin-bottom: .3rem;
-        font-size: 1.5625rem; }
+        font-size: 1.25rem; }
+        @media (min-width: 768px) {
+          .articleItem .articleItemInner .articleItemContent .articleItemTitle {
+            font-size: 1.4375rem;
+            margin-top: 0.3rem; } }
   .articleItem .articleItemCommentCount {
     position: absolute;
     bottom: 10px;
     right: 18px;
     align-items: center;
-    display: flex; }
+    display: flex;
+    font-size: 0.75rem; }
     .articleItem .articleItemCommentCount .commentCount {
-      font-size: 0.75rem;
-      margin-right: 0.6rem; }
+      margin-right: 0.4rem; }
       .articleItem .articleItemCommentCount .commentCount .commentCountNumber {
         margin-left: 0.2rem; }
+  .articleItem .articleItemComment {
+    padding-bottom: 1rem;
+    max-height: 220px;
+    overflow-y: scroll; }
+    @media (min-width: 768px) {
+      .articleItem .articleItemComment {
+        max-height: inherit;
+        overflow-y: auto; } }
 
 /*# sourceMappingURL=Article.module.css.map */

@@ -14,7 +14,6 @@ const articles = (state = [], action) => {
             }
         case FETCH_ARTICLES_SUCCESS:
             var posts = action.data
-            // let max;
             var articlWithCleanComments = posts.map(function (item) {
 
                 var attach_children_to_item = function (item, data) {
@@ -25,12 +24,9 @@ const articles = (state = [], action) => {
                 var tree = item.comments.filter(x => x.depth == 0)
                     .map(x => attach_children_to_item(x, item.comments));
 
-                // console.log(tree)
                 item.finalComments = tree
                 return item
             })
-
-
             return {
                 ...state,
                 articles: articlWithCleanComments,
