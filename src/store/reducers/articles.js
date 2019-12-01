@@ -100,8 +100,16 @@ const articles = (state = [], action) => {
                 error: false
             }
         case SORT:
+            let limitedPosts = state.articles
+            const sortedPosts = limitedPosts.map(function (item) {
+                item.comments = item.comments.sort((a,b)=> new Date( b.created_utc ) - new Date(a.created_utc));
+                item.latestCommentDate = item.comments[0].created_utc
+               return item
+            })
+            const updatedPosts = sortedPosts.sort((a,b)=>  new Date( b.latestCommentDate ) - new Date(a.latestCommentDate))
             return {
                 ...state,
+                articles:updatedPosts,
                 loading: false,
                 error: true
             }

@@ -84,6 +84,8 @@ p {
   margin-left: auto;
   justify-content: center;
   margin-bottom: 1.5rem;
-  align-items: center; }
+  align-items: center;
+  background: #2c2c2c;
+  border-color: #2c2c2c; }
 
 /*# sourceMappingURL=style.css.map */
