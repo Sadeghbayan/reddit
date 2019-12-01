@@ -1,11 +1,13 @@
 import { connect } from 'react-redux';
 import MainComponent from '../Main'
 import { fetchArticlesRequest } from '../../../store/actions/articles'
+import { deleteCommentRequest } from '../../../store/actions/comments'
 
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchArticles:() => dispatch(fetchArticlesRequest())
+        fetchArticles:() => dispatch(fetchArticlesRequest()),
+        deleteCommentRequest:(id, articleId) => dispatch(deleteCommentRequest(id, articleId))
     }
 }
 const mapStateToProps = (state) => {

@@ -38,16 +38,20 @@ class Article extends Component {
 
     handleLongText = (data, type) => {
         if(this.state.mobile){
-            if(type == 'title'){
+            if(type === 'title'){
                 return data.length < 20 ? data : data.substring(0, 18) + '...'
             }
-            if(type == 'body'){
-                console.log(data.length)
+            if(type === 'body'){
                 return data.length < 100 ? data : data.substring(0, 70) + '...'
             }
         }
         return data
     }
+
+    deleteComment = id => {
+        this.props.deleteComment(id, this.props.articleId)
+    }
+
 
     render() {
         const { showComment } = this.state;
@@ -79,7 +83,7 @@ class Article extends Component {
                 </div>
                 <div className={`${styles.articleItemComment} ${showComment ? "" : "hidden"}`}>
                     {this.props.comments.map(item =>
-                        <Comment comment={item} key={item.id}/>)}
+                        <Comment deleteComment={this.deleteComment} comment={item} key={item.id}/>)}
                 </div>
             </article>
         );
@@ -93,5 +97,8 @@ Article.propTypes = {
     image: PropTypes.string.isRequired,
     comments: PropTypes.array,
     count: PropTypes.number,
+    deleteComment: PropTypes.func,
+    articleId: PropTypes.string,
+
 };
 export default Article;

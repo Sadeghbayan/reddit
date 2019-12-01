@@ -8,8 +8,8 @@ class Main extends Component {
         this.props.fetchArticles()
     }
 
-    fetchMoreArticles = () => {
-
+    deleteComment = (id, articleId) => {
+        this.props.deleteCommentRequest(id, articleId)
     }
 
     render() {
@@ -24,11 +24,14 @@ class Main extends Component {
                                     {this.props.articles.articles.map(item =>
                                         <Article
                                         image={item.thumbnail}
+                                        articleId={item.id}
                                         title={item.title}
                                         bodytext={item.selftext}
                                         key={item.id}
                                         comments={item.finalComments}
-                                        count={item.comments.length}/>)}
+                                        count={item.comments.length}
+                                        deleteComment={this.deleteComment}
+                                        />)}
                                 </div>
 
                             ) : (
