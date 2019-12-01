@@ -62,3 +62,14 @@ p{
 .link_button{
   @include link_button()
 }
+
+
+.btn--sort {
+  &.ant-btn{
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    align-items: center;
+  }
+}

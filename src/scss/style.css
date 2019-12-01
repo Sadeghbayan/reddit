@@ -76,11 +76,14 @@ p {
   border-radius: 40px;
   background: #020024;
   background: linear-gradient(90deg, #020024 0%, #2fb0be 0%, #215893 50%, #1c3180 100%); }
-  @media (min-width: 768px) {
-    .link_button {
-      padding-left: 1rem;
-      margin: 1rem; } }
   .link_button i {
     padding-right: .5rem; }
+
+.btn--sort.ant-btn {
+  display: flex;
+  margin-left: auto;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  align-items: center; }
 
 /*# sourceMappingURL=style.css.map */

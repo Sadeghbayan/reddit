@@ -1,9 +1,12 @@
 import {
     FETCH_ARTICLES,
     FETCH_ARTICLES_SUCCESS,
-    FETCH_ARTICLES_FAILED, DELETE_COMMENT
+    FETCH_ARTICLES_FAILED,
+    DELETE_COMMENT,
+    LOAD_MORE,
+    SORT
 } from '../actions/names';
-
+const LIMIT = 4;
 const articles = (state = [], action) => {
     switch (action.type) {
         case FETCH_ARTICLES:
@@ -14,6 +17,7 @@ const articles = (state = [], action) => {
             }
         case FETCH_ARTICLES_SUCCESS:
             var posts = action.data
+            const countOfShownArticles = 4;
             var articlWithCleanComments = posts.map(function (item) {
 
                 var attach_children_to_item = function (item, data) {
@@ -27,9 +31,14 @@ const articles = (state = [], action) => {
                 item.finalComments = tree
                 return item
             })
+
+            let limitedArticles = articlWithCleanComments.slice(0,LIMIT);
+
             return {
                 ...state,
-                articles: articlWithCleanComments,
+                articles: limitedArticles,
+                allTheArticles: articlWithCleanComments,
+                countOfShownArticles: countOfShownArticles,
                 loading: false,
                 error: false
             }
@@ -48,7 +57,7 @@ const articles = (state = [], action) => {
 
             let findPost = posts.filter(post => post.id === dataIds.articleId).shift()
 
-            var find_children_to_cm = function (data) {
+            let find_children_to_cm = function (data) {
                 data.children = data.children
                     .filter(function(child){ return child.id !== dataIds.id})
                     .map(function(child){ return find_children_to_cm(child)});
@@ -58,7 +67,7 @@ const articles = (state = [], action) => {
             // Find the comment Id and delete it
 
 
-            var item = findPost.finalComments.filter(x => x.id == dataIds.id).length > 0
+            let item = findPost.finalComments.filter(x => x.id == dataIds.id).length > 0
             if(item) {
                 existComment = findPost.finalComments.filter(x => !(x.id == dataIds.id))
             }else{
@@ -77,6 +86,24 @@ const articles = (state = [], action) => {
             return {
                 ...state,
                 articles: finalPosts,
+            }
+        case LOAD_MORE:
+            let currentArticles = state.articles;
+            let allTheArticles = state.allTheArticles;
+            let articleShouldBeAdded = currentArticles.concat(allTheArticles.slice(state.countOfShownArticles, state.countOfShownArticles + LIMIT))
+            let updateCount = state.countOfShownArticles + LIMIT
+            return {
+                ...state,
+                articles:articleShouldBeAdded,
+                countOfShownArticles:updateCount,
+                loading: false,
+                error: false
+            }
+        case SORT:
+            return {
+                ...state,
+                loading: false,
+                error: true
             }
         default:
             return state

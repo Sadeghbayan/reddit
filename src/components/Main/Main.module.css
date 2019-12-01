@@ -27,10 +27,6 @@
   margin-top: .4rem;
   display: flex;
   margin-left: auto; }
-  @media (min-width: 768px) {
-    .linkButton {
-      padding-left: 1rem;
-      margin: 1rem; } }
   .linkButton i {
     padding-right: .5rem; }
 

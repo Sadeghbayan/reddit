@@ -55,10 +55,6 @@ $fix-mqs : false !default;
   display: inline-flex;
   border-radius: $border-radius-lg;
   @include blue_gradiant;
-  @include mq(md){
-    padding-left: $default-space;
-    margin: $default-space;
-  }
   i{
     padding-right: .5rem;
   }
