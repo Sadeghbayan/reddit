@@ -16,9 +16,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 const mapStateToProps = (state) => {
 
-    if(!state.articles.loading){
-        console.log(state.articles.loading,state.articles.articles, "here")
-    }
     return {
         articles : state.articles,
 
